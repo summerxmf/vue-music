@@ -7,7 +7,7 @@ const debug = process.env.NODE_ENV !== 'production'
 
 export function getLyric (mid) {
   // const url = '/api/lyric' 
-  const url = debug ? '/api/lyric' : 'http://104.167.98.201/music-vue/api/lyric'
+  const url = debug ? '/api/lyric' : 'http://104.167.98.201/api/lyric'
   // const url = debug ? '/api/lyric' : 'http://localhost:9000/api/lyric'
 
   const data = Object.assign({}, commonParams, {
@@ -28,7 +28,7 @@ export function getLyric (mid) {
 }
 
 export function getSongsUrl (songs) {
-  const url = debug ? '/api/getPurlUrl' : 'http://104.167.98.201/music-vue/api/getPurlUrl'
+  const url = debug ? '/api/getPurlUrl' : 'http://104.167.98.201/api/getPurlUrl'
   // const url = debug ? '/api/getPurlUrl' : 'http://localhost:9000/api/getPurlUrl'
   let mids = []
   let types = []

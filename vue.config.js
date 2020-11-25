@@ -154,10 +154,8 @@ module.exports = {
       .set('api', resolve('src/api'))
       .set('base', resolve('src/base'))
 
-    config.plugin('context')
-      .use(webpack.ContextReplacementPlugin,
-        [/moment[/\\]locale$/, /zh-cn/])
+   
   },
-  publicPath: ''
+  publicPath: './'
   // baseUrl: ''
 }

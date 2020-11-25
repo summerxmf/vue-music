@@ -6,9 +6,9 @@ const debug = process.env.NODE_ENV !== 'production'
 
 export const getRecommend = () => {
   // const url = '/api/getTopBanner'
-	const url = debug ? '/api/getTopBanner' : 'http://0.0.0.0:8900/api/getTopBanner'
+	 const url = debug ? '/api/getTopBanner' : 'http://104.167.98.201/api/getTopBanner'
   // const url = debug ? '/api/getTopBanner' : 'http://localhost:9000/api/getTopBanner'
-
+  // const url = 'https://u.y.qq.com/cgi-bin/musicu.fcg'
 	const data = Object.assign({}, commonParams, {
 		format: 'json',
   		platform: 'yqq.json',
@@ -42,6 +42,10 @@ export const getRecommend = () => {
 	    }
 	})
 	 return axios.get(url, {
+      // headers: {
+      //   referer: 'https://u.y.qq.com/',
+      //   host: 'u.y.qq.com'
+      // },
 	    params: data
 	 }).then((res) => {
 	    return res.data
@@ -50,7 +54,7 @@ export const getRecommend = () => {
 
 export function getDiscList () {
   // 线上环境地址，同学们根据自己的需要配置修改
-  const url = debug ? '/api/getDiscList' : 'http://http://104.167.98.201/music-vue/api/getDiscList'
+  const url = debug ? '/api/getDiscList' : 'http://104.167.98.201/api/getDiscList'
   // const url = debug ? '/api/getDiscList' : 'http://localhost:9000/api/getDiscList'
 
   const data = Object.assign({}, commonParams, {
@@ -73,7 +77,7 @@ export function getDiscList () {
 }
 
 export function getSongList (disstid) {
-  const url = debug ? '/api/getCdInfo' : 'http://http://104.167.98.201/music-vue/api/getCdInfo'
+  const url = debug ? '/api/getCdInfo' : 'http://104.167.98.201/api/getCdInfo'
   // const url = debug ? '/api/getCdInfo' : 'http://localhost:9000/api/getCdInfo'
   const data = Object.assign({}, commonParams, {
     disstid,
